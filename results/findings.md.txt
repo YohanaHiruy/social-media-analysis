@@ -1,0 +1,15 @@
+# Key Findings
+
+## 1. Most Popular Social Media Platform was Instagram was the most commonly reported primary social media platform, with 1,408 students (32.23% of the imported dataset).
+
+## 2. Average Daily Usage by Platform 
+Snapchat recorded the highest average daily usage, at 5.42 hours per day.
+
+## 3. Late-Night Usage and Sleep
+Students who reported late-night social media usage slept an average of 6.43 hours, compared with 7.08 hours for students who did not. Their average sleep quality score was also lower (2.24 compared with 2.80).
+
+## 4. Academic Performance by Academic Level
+Postgraduate students recorded the highest average GPA at 3.47. Undergraduate and High School students both recorded an average GPA of 3.43.
+
+## Dataset Note
+The analysis was performed on 4,369 imported records out of the original 4,500 rows. The 131 records not imported were excluded from this analysis.

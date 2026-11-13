@@ -1,0 +1,60 @@
+
+CREATE TABLE students (
+    Student_ID VARCHAR(20) PRIMARY KEY,
+    Age INT,
+    Gender VARCHAR(20),
+    Academic_Level VARCHAR(30),
+    Primary_Platform VARCHAR(30),
+    Daily_Usage_Hours DECIMAL(4,2),
+    Weekend_Extra_Hours DECIMAL(4,2),
+    Device_Type VARCHAR(30),
+    Sleep_Duration_Hours DECIMAL(4,2),
+    Sleep_Quality_Score INT,
+    Late_Night_Usage BOOLEAN,
+    Social_Comparison_Frequency VARCHAR(30),
+    Perceived_Stress_Score DECIMAL(5,2),
+    Mental_Health_Index INT,
+    Academic_Performance_GPA DECIMAL(3,2),
+    Overall_Impact VARCHAR(30)
+);
+
+
+USE social_media_analysis;
+
+ QUESTION 1: Most popular social media platform
+SELECT
+    Primary_Platform,
+    COUNT(*) AS total_students
+FROM students_raw
+GROUP BY Primary_Platform
+ORDER BY total_students DESC;
+
+
+ QUESTION 2: Average daily usage by platform
+SELECT
+    Primary_Platform,
+    ROUND(AVG(Daily_Usage_Hours), 2) AS average_hours
+FROM students_raw
+GROUP BY Primary_Platform
+ORDER BY average_hours DESC;
+
+
+QUESTION 3: Relationship between late-night usage and sleep
+SELECT
+    Late_Night_Usage,
+    COUNT(*) AS total_students,
+    ROUND(AVG(Sleep_Duration_Hours), 2) AS avg_sleep_hours,
+    ROUND(AVG(Sleep_Quality_Score), 2) AS avg_sleep_quality
+FROM students_raw
+GROUP BY Late_Night_Usage;
+
+
+QUESTION 4: Average GPA by academic level
+SELECT
+    Academic_Level,
+    COUNT(*) AS total_students,
+    ROUND(AVG(Academic_Performance_GPA), 2) AS average_gpa
+FROM students_raw
+GROUP BY Academic_Level
+ORDER BY average_gpa DESC;
+
